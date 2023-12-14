@@ -1,0 +1,33 @@
+@use "../index.scss";
+
+nav {
+    background-color: index.$secondary;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 0;
+
+    span {
+        font-size: 2.5rem;
+        color: white;
+        font-weight: 700;
+        width: 300px;
+        text-align: center;
+    }
+
+    a {
+        font-size: 2.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .active {
+        text-decoration: underline;
+    }
+}

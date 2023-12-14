@@ -6,12 +6,13 @@ function DoctorPage() {
     const url = useLocation().pathname
 
     useEffect(() => {
+        console.log(url)
         if (url === '/doctors') {
             setPage("Doctors")
         } else if (url === '/facilities') {
             setPage("Facilities")
         }
-    }, [])
+    }, [page])
     
     return (
         <>

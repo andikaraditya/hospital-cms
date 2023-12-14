@@ -5,57 +5,64 @@ import PatientDetailPage from "../views/PatientDetailPage";
 import CardPage from "../views/CardPage";
 import CardDetailPage from "../views/CardDetail";
 import PatientFormPage from "../views/PatientFormPage";
+import Layout from "../components/Layout";
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <HomePage />
-    },
-    {
-        path: "/patients",
+        element: <Layout />,
         children: [
             {
                 index: true,
-                element: <PatientPage />
+                element: <HomePage />
             },
             {
-                path: ":id",
-                element: <PatientDetailPage />
-            }
-        ]
-    },
-    {
-        path: "/doctors",
-        children: [
-            {
-                index: true,
-                element: <CardPage />
+                path: "/patients",
+                children: [
+                    {
+                        index: true,
+                        element: <PatientPage />
+                    },
+                    {
+                        path: ":id",
+                        element: <PatientDetailPage />
+                    }
+                ]
             },
             {
-                path: ":id",
-                element: <CardDetailPage />
-            }
-        ]
-    },
-    {
-        path: "/facilities",
-        children: [
-            {
-                index: true,
-                element: <CardPage />
+                path: "/doctors",
+                children: [
+                    {
+                        index: true,
+                        element: <CardPage />
+                    },
+                    {
+                        path: ":id",
+                        element: <CardDetailPage />
+                    }
+                ]
             },
             {
-                path: ":id",
-                element: <CardDetailPage />
-            }
+                path: "/facilities",
+                children: [
+                    {
+                        index: true,
+                        element: <CardPage />
+                    },
+                    {
+                        path: ":id",
+                        element: <CardDetailPage />
+                    }
+                ]
+            },
+            {
+                path: "/create",
+                element: <PatientFormPage />
+            },
+            {
+                path: "/edit/:id",
+                element: <PatientFormPage />
+            },
         ]
-    },
-    {
-        path: "/create",
-        element: <PatientFormPage />
-    },
-    {
-        path: "/edit/:id",
-        element: <PatientFormPage />
-    },
+    }
 ])
