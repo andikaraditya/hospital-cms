@@ -35,13 +35,27 @@ function PatientFormPage() {
     async function handleSubmit(e) {
         e.preventDefault()
         try {
-            console.log({
-                name,
-                illness,
-                facilityId,
-                doctorId,
-                description
+            // console.log({
+            //     name,
+            //     illness,
+            //     facilityId,
+            //     doctorId,
+            //     description
+            // })
+
+            const {data} = await axios({
+                method: "post",
+                url: "http://localhost:3000/Patients",
+                data: {
+                    name: name,
+                    WardId: facilityId,
+                    DoctorId: doctorId,
+                    illness: illness,
+                    Description: description
+                }
             })
+
+            navigate("/patients")
         } catch (error) {
             console.log(error)
         }
