@@ -2,6 +2,7 @@ import "./PatientPage.scss"
 import PatientRow from "../components/PatientRow";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 function PatientPage() {
     const [patients, setPatients] = useState([])
     const [facilities, setFacilities] = useState([])
@@ -11,6 +12,8 @@ function PatientPage() {
     const [illness, setIllness] = useState("")
     const [facilityId, setFacilityId] = useState("")
     const [doctorId, setDoctorId] = useState("")
+
+    const navigate = useNavigate()
 
     async function fetchPatient() {
         try {
@@ -127,7 +130,13 @@ function PatientPage() {
             <div id="patient-list">
                 <div id="title-row">
                     <h1>Patients</h1>
-                    <button>Add Patient</button>
+                    <button
+                    className="pointer-hover"
+                    onClick={(e) => {
+                        e.preventDefault()
+                        navigate("/create")
+                    }}
+                    >Add Patient</button>
                 </div>
                 <div id="patient-container">
                     <div id="table-head">

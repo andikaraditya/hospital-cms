@@ -1,0 +1,105 @@
+@use "../index.scss";
+
+#form-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #head {
+        display: flex;
+        align-items: center;
+        width: 80%;
+
+        div {
+            flex: 1;
+
+            h1 {
+                text-align: center;
+                font-size: 4rem;
+            }
+
+            button {
+                font-size: 2rem;
+                padding: 0.5rem 1.5rem;
+                color: white;
+                font-weight: bold;
+                background-color: index.$danger;
+                border: none;
+                border-radius: 100px;
+            }
+        }
+    }
+
+
+    form {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        
+        #form {
+            display: flex;
+    
+            div {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem 4rem;
+    
+                label {
+                    font-size: 2.5rem;
+                    margin-bottom: 0.8rem;
+                }
+    
+                input {
+                    width: 90%;
+                    height: 60px;
+                    border: index.$grey solid 3px;
+                    border-radius: 20px;
+                    font-size: 1.5rem;
+                    margin-bottom: 1.5rem;
+                }
+    
+                .form-column-container {
+                    width: 90%;
+                    display: flex;
+                    flex-direction: row;
+                    margin: 1rem 0;
+                    padding: 0;
+                    justify-content: space-between;
+    
+                    select {
+                        width: 48%;
+                        height: 70px;
+                        font-size: 1.3rem;
+                        border: index.$grey solid 3px;
+                        border-radius: 10px;
+                        padding-left: 0.8rem;
+    
+                    }
+                }
+    
+                textarea {
+                    width: 100%;
+                    height: 300px;
+                    border: index.$grey solid 3px;
+                    border-radius: 10px;
+                    font-size: 1.5rem;
+                    padding: 1rem;
+                }
+            }
+        }
+
+        button {
+            font-size: 2.5rem;
+            padding: 1rem 3rem;
+            color: white;
+            font-weight: bold;
+            background-color: index.$primary;
+            border: none;
+            border-radius: 100px;
+            align-self: center;
+            margin-top: 2rem;
+        }
+    }
+}
