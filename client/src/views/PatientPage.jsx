@@ -130,6 +130,21 @@ function PatientPage() {
                     <button>Add Patient</button>
                 </div>
                 <div id="patient-container">
+                    <div id="table-head">
+                        <div>
+                        </div>
+                        <div>
+                            Name
+                        </div>
+                        <div>
+                            Diagnose
+                        </div>
+                        <div>
+                            Assigned Physician
+                        </div>
+                        <div>
+                        </div>
+                    </div>
                     {patients.map((el) => {
                         return (
                             <PatientRow 
