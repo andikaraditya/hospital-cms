@@ -1,12 +1,13 @@
 import "./PatientRow.scss"
 
-function PatientRow() {
+function PatientRow(props) {
+    const {patient} = props
     return (
         <div className="patient-row">
-            <img src="https://placehold.co/400" alt="" />
-            <p>Name</p>
-            <p>Illness</p>
-            <p>Doctor</p>
+            <img src="https://cdn-icons-png.flaticon.com/512/1430/1430453.png" alt="" />
+            <p>{patient.name}</p>
+            <p>{patient.illness}</p>
+            <p>{patient.Doctor.name}</p>
             <button>Details</button>
         </div>
     )
