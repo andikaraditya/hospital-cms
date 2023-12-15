@@ -12,10 +12,10 @@ function PatientDetailPage() {
                 method: "get",
                 url: `http://localhost:3000/Patients/${id}`,
                 params: {
-                    "_expand": ["Doctor", "Ward", "PatientInfo"]
+                    "_expand": ["Doctor", "Ward"]
                 }
             })
-            console.log(data)
+            // console.log(data)
             setPatient(data)
         } catch (error) {
             console.log(error)

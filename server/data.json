@@ -7,7 +7,12 @@
             "DoctorId": 1,
             "illness": "Lung Cancer",
             "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-            "PatientInfoId": 1
+            "info": {
+                "bloodPressure": 119,
+                "heartRate": 82,
+                "weight": 54,
+                "height": 166
+            }
         },
         {
             "id": 2,
@@ -16,7 +21,12 @@
             "DoctorId": 1,
             "illness": "Lung Cancer",
             "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-            "PatientInfoId": 2
+            "info": {
+                "bloodPressure": 101,
+                "heartRate": 79,
+                "weight": 96,
+                "height": 169
+            }
         },
         {
             "id": 3,
@@ -25,7 +35,12 @@
             "DoctorId": 3,
             "illness": "Lung Cancer",
             "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-            "PatientInfoId": 3
+            "info": {
+                "bloodPressure": 119,
+                "heartRate": 87,
+                "weight": 85,
+                "height": 168
+            }
         },
         {
             "id": 4,
@@ -34,7 +49,12 @@
             "DoctorId": 2,
             "illness": "Lung Cancer",
             "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-            "PatientInfoId": 4
+            "info": {
+                "bloodPressure": 118,
+                "heartRate": 62,
+                "weight": 78,
+                "height": 174
+            }
         },
         {
             "id": 5,
@@ -43,7 +63,12 @@
             "DoctorId": 2,
             "illness": "Lung Cancer",
             "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-            "PatientInfoId": 5
+            "info": {
+                "bloodPressure": 114,
+                "heartRate": 98,
+                "weight": 90,
+                "height": 161
+            }
         },
         {
             "id": 6,
@@ -52,7 +77,12 @@
             "DoctorId": 2,
             "illness": "Lung Cancer",
             "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-            "PatientInfoId": 6
+            "info": {
+                "bloodPressure": 131,
+                "heartRate": 93,
+                "weight": 91,
+                "height": 182
+            }
         },
         {
             "id": 7,
@@ -61,7 +91,12 @@
             "DoctorId": 3,
             "illness": "Lung Cancer",
             "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-            "PatientInfoId": 7
+            "info": {
+                "bloodPressure": 129,
+                "heartRate": 68,
+                "weight": 63,
+                "height": 167
+            }
         },
         {
             "id": 8,
@@ -70,7 +105,12 @@
             "DoctorId": 3,
             "illness": "Lung Cancer",
             "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-            "PatientInfoId": 8
+            "info": {
+                "bloodPressure": 123,
+                "heartRate": 100,
+                "weight": 90,
+                "height": 155
+            }
         },
         {
             "id": 9,
@@ -79,7 +119,12 @@
             "DoctorId": 3,
             "illness": "Lung Cancer",
             "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-            "PatientInfoId": 9
+            "info": {
+                "bloodPressure": 102,
+                "heartRate": 84,
+                "weight": 89,
+                "height": 157
+            }
         }
     ],
     "Wards": [
@@ -94,71 +139,6 @@
         {
             "id": 3,
             "name": "Camellia"
-        }
-    ],
-    "PatientInfos": [
-        {
-            "id": 1,
-            "bloodPressure": 119,
-            "heartRate": 82,
-            "weight": 54,
-            "height": 166
-        },
-        {
-            "id": 2,
-            "bloodPressure": 101,
-            "heartRate": 79,
-            "weight": 96,
-            "height": 169
-        },
-        {
-            "id": 3,
-            "bloodPressure": 119,
-            "heartRate": 87,
-            "weight": 85,
-            "height": 168
-        },
-        {
-            "id": 4,
-            "bloodPressure": 118,
-            "heartRate": 62,
-            "weight": 78,
-            "height": 174
-        },
-        {
-            "id": 5,
-            "bloodPressure": 114,
-            "heartRate": 98,
-            "weight": 90,
-            "height": 161
-        },
-        {
-            "id": 6,
-            "bloodPressure": 131,
-            "heartRate": 93,
-            "weight": 91,
-            "height": 182
-        },
-        {
-            "id": 7,
-            "bloodPressure": 129,
-            "heartRate": 68,
-            "weight": 63,
-            "height": 167
-        },
-        {
-            "id": 8,
-            "bloodPressure": 123,
-            "heartRate": 100,
-            "weight": 90,
-            "height": 155
-        },
-        {
-            "id": 9,
-            "bloodPressure": 102,
-            "heartRate": 84,
-            "weight": 89,
-            "height": 157
         }
     ],
     "Doctors": [
