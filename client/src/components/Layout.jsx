@@ -13,8 +13,6 @@ function Layout() {
                 }}>TaraCare Healthcare Co</span>
                 <NavLink to={"/"}>Dashboards</NavLink>
                 <NavLink to={"/patients"}>Patients</NavLink>
-                <NavLink to={"/doctors"}>Doctors</NavLink>
-                <NavLink to={"/facilities"}>Facilities</NavLink>
                 <span>Welcome Admin</span>
             </nav>
             <Outlet />
