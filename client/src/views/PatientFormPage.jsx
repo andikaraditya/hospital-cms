@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import "./PatientFormPage.scss"
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 function PatientFormPage() {
     const [facilities, setFacilities] = useState([])
     const [doctors, setDoctors] = useState([])
 
+    const {id} = useParams()
     // const [name, setName] = useState("")
     // const [illness, setIllness] = useState("")
     // const [facilityId, setFacilityId] = useState("")
@@ -22,10 +23,10 @@ function PatientFormPage() {
     })
 
     const [info, setInfo] = useState({
-        bloodPressure: 0,
-        heartRate: 0,
-        weight: 0,
-        height: 0
+        bloodPressure: undefined,
+        heartRate: undefined,
+        weight: undefined,
+        height: undefined
     })
 
     const navigate = useNavigate()
@@ -67,9 +68,17 @@ function PatientFormPage() {
         e.preventDefault()
         try {
             const {name, WardId, DoctorId, illness, Description} = patient
+            let method = "post"
+            let url = "http://localhost:3000/Patients"
+
+            if (id) {
+                method = "put"
+                url += `/${id}`
+            }
+
             const {data} = await axios({
-                method: "post",
-                url: "http://localhost:3000/Patients",
+                method: method,
+                url: url,
                 data: {
                     name: name,
                     WardId: WardId,
@@ -86,8 +95,25 @@ function PatientFormPage() {
         }
     }
 
+    async function fetchPatient() {
+        try {
+            const {data} = await axios({
+                method: "get",
+                url: `http://localhost:3000/Patients/${id}`
+            })
+
+            setPatient(data)
+            setInfo(data.info)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     useEffect(() => {
         fetchData()
+        if (id) {
+            fetchPatient()
+        }
     }, [])
 
     return (
@@ -103,7 +129,7 @@ function PatientFormPage() {
                     >Cancel</button>
                 </div>
                 <div>
-                    <h1>Add Patient</h1>
+                    <h1>{id ? "Edit" : "Add"} Patient</h1>
                 </div>
                 <div>
                 </div>
@@ -116,9 +142,11 @@ function PatientFormPage() {
                     <label htmlFor="">Name: </label>
                     <input 
                     onChange={patientFormHandler}
+                    defaultValue={patient.name}
                     type="text" name="name" id="name" placeholder="Enter patient name" required/>
                     <label htmlFor="">Diagnose: </label>
                     <input 
+                    defaultValue={patient.illness}
                     onChange={patientFormHandler}
                     type="text" name="illness" id="illness" placeholder="Enter diagnose" required/>
                     <div className="form-column-container">
@@ -152,30 +180,35 @@ function PatientFormPage() {
                         <label >Blood Pressure:</label>
                         <input 
                         onChange={infoHandler}
+                        defaultValue={info.bloodPressure}
                         type="number" name="bloodPressure" id="bloodPressure" required placeholder="Enter blood pressure"/>
                     </div>
                     <div id="form-info">
                         <label >Heart Rate:</label>
                         <input 
                         onChange={infoHandler}
+                        defaultValue={info.heartRate}
                         type="number" name="heartRate" id="heartRate" required placeholder="Enter heart rate"/>
                     </div>
                     <div id="form-info">
                         <label >Height:</label>
                         <input 
                         onChange={infoHandler}
+                        defaultValue={info.height}
                         type="number" name="height" id="height" required placeholder="Enter height in cm"/>
                     </div>
                     <div id="form-info">
                         <label >Weight:</label>
                         <input 
                         onChange={infoHandler}
+                        defaultValue={info.weight}
                         type="number" name="weight" id="weight" required placeholder="Enter weight in kg"/>
                     </div>
                 </div>
                 <div>
                     <label>Notes: </label>
                     <textarea 
+                    defaultValue={patient.Description}
                     onChange={patientFormHandler}
                     name="Description" id="Description" cols="30" rows="10" required></textarea>
                 </div>
