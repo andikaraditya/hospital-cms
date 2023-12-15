@@ -7,13 +7,44 @@ function PatientFormPage() {
     const [facilities, setFacilities] = useState([])
     const [doctors, setDoctors] = useState([])
 
-    const [name, setName] = useState("")
-    const [illness, setIllness] = useState("")
-    const [facilityId, setFacilityId] = useState("")
-    const [doctorId, setDoctorId] = useState("")
-    const [description, setDescription] = useState("")
+    // const [name, setName] = useState("")
+    // const [illness, setIllness] = useState("")
+    // const [facilityId, setFacilityId] = useState("")
+    // const [doctorId, setDoctorId] = useState("")
+    // const [description, setDescription] = useState("")
+
+    const [patient, setPatient] = useState({
+        name: "",
+        illness: "",
+        DoctorId: 0,
+        WardId: 0,
+        Description: ""
+    })
+
+    const [info, setInfo] = useState({
+        bloodPressure: 0,
+        heartRate: 0,
+        weight: 0,
+        height: 0
+    })
 
     const navigate = useNavigate()
+
+    function infoHandler(e) {
+        const { name, value } = e.target
+        setInfo((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }))
+    }
+
+    function patientFormHandler(e) {
+        const { name, value } = e.target
+        setPatient((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }))
+    }
 
     async function fetchData() {
         try {
@@ -35,23 +66,17 @@ function PatientFormPage() {
     async function handleSubmit(e) {
         e.preventDefault()
         try {
-            // console.log({
-            //     name,
-            //     illness,
-            //     facilityId,
-            //     doctorId,
-            //     description
-            // })
-
+            const {name, WardId, DoctorId, illness, Description} = patient
             const {data} = await axios({
                 method: "post",
                 url: "http://localhost:3000/Patients",
                 data: {
                     name: name,
-                    WardId: facilityId,
-                    DoctorId: doctorId,
+                    WardId: WardId,
+                    DoctorId: DoctorId,
                     illness: illness,
-                    Description: description
+                    Description: Description,
+                    info: info
                 }
             })
 
@@ -90,22 +115,16 @@ function PatientFormPage() {
                 <div>
                     <label htmlFor="">Name: </label>
                     <input 
-                    onChange={(e) => {
-                        setName(e.target.value)
-                    }}
+                    onChange={patientFormHandler}
                     type="text" name="name" id="name" placeholder="Enter patient name" required/>
                     <label htmlFor="">Diagnose: </label>
                     <input 
-                    onChange={(e) => {
-                        setIllness(e.target.value)
-                    }}
+                    onChange={patientFormHandler}
                     type="text" name="illness" id="illness" placeholder="Enter diagnose" required/>
                     <div className="form-column-container">
                         <select 
-                        onChange={(e) => {
-                            setFacilityId(e.target.value)
-                        }}
-                        name="facilities" id="facilities" required>
+                        onChange={patientFormHandler}
+                        name="WardId" id="WardId" required>
                             <option value="">select facilities</option>
                             {facilities.map((el) => {
                                 return (
@@ -116,10 +135,8 @@ function PatientFormPage() {
                             })}
                         </select>
                         <select
-                        onChange={(e) => {
-                            setDoctorId(e.target.value)
-                        }}
-                        name="doctor" id="doctor" required>
+                        onChange={patientFormHandler}
+                        name="DoctorId" id="DoctorId" required>
                             <option value="">select doctor</option>
                             {doctors.map((el) => {
                                 return (
@@ -130,14 +147,37 @@ function PatientFormPage() {
                             })}
                         </select>
                     </div>
+                    <label>Info:</label>
+                    <div id="form-info">
+                        <label >Blood Pressure:</label>
+                        <input 
+                        onChange={infoHandler}
+                        type="number" name="bloodPressure" id="bloodPressure" required placeholder="Enter blood pressure"/>
+                    </div>
+                    <div id="form-info">
+                        <label >Heart Rate:</label>
+                        <input 
+                        onChange={infoHandler}
+                        type="number" name="heartRate" id="heartRate" required placeholder="Enter heart rate"/>
+                    </div>
+                    <div id="form-info">
+                        <label >Height:</label>
+                        <input 
+                        onChange={infoHandler}
+                        type="number" name="height" id="height" required placeholder="Enter height in cm"/>
+                    </div>
+                    <div id="form-info">
+                        <label >Weight:</label>
+                        <input 
+                        onChange={infoHandler}
+                        type="number" name="weight" id="weight" required placeholder="Enter weight in kg"/>
+                    </div>
                 </div>
                 <div>
                     <label>Notes: </label>
                     <textarea 
-                    onChange={(e) => {
-                        setDescription(e.target.value)
-                    }}
-                    name="description" id="" cols="30" rows="10" required></textarea>
+                    onChange={patientFormHandler}
+                    name="Description" id="Description" cols="30" rows="10" required></textarea>
                 </div>
                 </div>
                 <button
