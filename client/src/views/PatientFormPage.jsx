@@ -109,6 +109,19 @@ function PatientFormPage() {
         }
     }
 
+    async function handleDelete() {
+        try {
+            const {data} = await axios({
+                method: "delete",
+                url: `http://localhost:3000/Patients/${id}`
+            })
+
+            navigate("/patients")
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     useEffect(() => {
         fetchData()
         if (id) {
@@ -132,6 +145,10 @@ function PatientFormPage() {
                     <h1>{id ? "Edit" : "Add"} Patient</h1>
                 </div>
                 <div>
+                    {id ? <button
+                    className="pointer-hover"
+                    onClick={handleDelete}
+                    >Delete</button> : ""}
                 </div>
             </div>
             <form
