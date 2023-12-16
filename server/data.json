@@ -11,7 +11,10 @@
                 "bloodPressure": 119,
                 "heartRate": 82,
                 "weight": 54,
-                "height": 166
+                "height": 166,
+                "insurance": true,
+                "risk": "low",
+                "age": 53
             }
         },
         {
@@ -25,7 +28,10 @@
                 "bloodPressure": 101,
                 "heartRate": 79,
                 "weight": 96,
-                "height": 169
+                "height": 169,
+                "insurance": true,
+                "risk": "medium",
+                "age": 23
             }
         },
         {
@@ -39,7 +45,10 @@
                 "bloodPressure": 119,
                 "heartRate": 87,
                 "weight": 85,
-                "height": 168
+                "height": 168,
+                "insurance": true,
+                "risk": "high",
+                "age": 40
             }
         },
         {
@@ -53,7 +62,10 @@
                 "bloodPressure": 118,
                 "heartRate": 62,
                 "weight": 78,
-                "height": 174
+                "height": 174,
+                "insurance": true,
+                "risk": "low",
+                "age": 23
             }
         },
         {
@@ -67,7 +79,10 @@
                 "bloodPressure": 114,
                 "heartRate": 98,
                 "weight": 90,
-                "height": 161
+                "height": 161,
+                "insurance": true,
+                "risk": "medium",
+                "age": 35
             }
         },
         {
@@ -81,7 +96,10 @@
                 "bloodPressure": 131,
                 "heartRate": 93,
                 "weight": 91,
-                "height": 182
+                "height": 182,
+                "insurance": false,
+                "risk": "high",
+                "age": 42
             }
         },
         {
@@ -95,7 +113,10 @@
                 "bloodPressure": 129,
                 "heartRate": 68,
                 "weight": 63,
-                "height": 167
+                "height": 167,
+                "insurance": false,
+                "risk": "low",
+                "age": 44
             }
         },
         {
@@ -109,7 +130,10 @@
                 "bloodPressure": 123,
                 "heartRate": 100,
                 "weight": 90,
-                "height": 155
+                "height": 155,
+                "insurance": false,
+                "risk": "medium",
+                "age": 23
             }
         },
         {
@@ -123,7 +147,10 @@
                 "bloodPressure": 102,
                 "heartRate": 84,
                 "weight": 89,
-                "height": 157
+                "height": 157,
+                "insurance": false,
+                "risk": "high",
+                "age": 22
             }
         }
     ],
