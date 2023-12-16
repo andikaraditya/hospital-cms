@@ -49,22 +49,25 @@ function PatientDetailPage() {
                     <img src="https://cdn-icons-png.flaticon.com/512/2185/2185005.png" alt="" />
                     <p>{patient.Ward.name}</p>
                 </div>
-                <button
+                
+            </div>
+            <div id="info-detail">
+                <div id="title">
+                    <p>Patient Informations</p>
+                    <button
                 onClick={() => {
                     navigate(`/edit/${patient.id}`)
                 }}
                 className="pointer-hover"
-                >Edit Info</button>
-            </div>
-            <div id="info-detail">
-                <p id="title">Patient Informations</p>
+                >Edit Informations</button>
+                </div>
                 <div className="info-table">
                     <p>Name: {patient.name}</p>
                     <p>Age: {patient.info.age}</p>
                 </div>
                 <div className="info-table">
-                    <p>Blood Pressure: {patient.info.bloodPressure}</p>
-                    <p>Heart Rate: {patient.info.age}</p>
+                    <p id="blood">Blood Pressure: {patient.info.bloodPressure}</p>
+                    <p id="heart">Heart Rate: {patient.info.age} bpm</p>
                 </div>
                 <div className="info-table">
                     <p>Height: {patient.info.height} cm</p>
@@ -73,7 +76,10 @@ function PatientDetailPage() {
                 </div>
                 <div className="info-table">
                     <p>Insurance: {patient.info.insurance ? "Yes" : "No"} </p>
-                    <p>Risk: {patient.info.risk}</p>
+                    <p>Risk: <span className={patient.info.risk}>{patient.info.risk}</span> </p> 
+                </div>
+                <div className="info-table">
+                    <p>Notes: <br /> <span id="description">{patient.Description}</span> </p>
                 </div>
             </div>
         </div>
