@@ -32,7 +32,10 @@ function PatientFormPage() {
     const navigate = useNavigate()
 
     function infoHandler(e) {
-        const { name, value } = e.target
+        let { name, value } = e.target
+        if (name === "insurance") {
+            value = (value === "true")
+        }
         setInfo((prevData) => ({
             ...prevData,
             [name]: value,
@@ -194,6 +197,13 @@ function PatientFormPage() {
                     </div>
                     <label>Info:</label>
                     <div id="form-info">
+                        <label >Age:</label>
+                        <input 
+                        onChange={infoHandler}
+                        defaultValue={info.age}
+                        type="number" name="age" id="age" required placeholder="Enter blood pressure"/>
+                    </div>
+                    <div id="form-info">
                         <label >Blood Pressure:</label>
                         <input 
                         onChange={infoHandler}
@@ -220,6 +230,34 @@ function PatientFormPage() {
                         onChange={infoHandler}
                         defaultValue={info.weight}
                         type="number" name="weight" id="weight" required placeholder="Enter weight in kg"/>
+                    </div>
+                    <div id="form-info">
+                        <label >Risk:</label>
+                        <select 
+                        onChange={infoHandler}
+                        name="risk" id="risk" required>
+                            <option value="" >Select Risk</option>
+                            <option value="low">low</option>
+                            <option value="medium">medium</option>
+                            <option value="high">high</option>
+                        </select>
+                    </div>
+                    <div id="form-info">
+                        <label >Insurance:</label>
+                        <div id="radio">
+                            <div className="radio-item">
+                            <label htmlFor="insuranceTrue">Yes</label> 
+                            <input 
+                            onChange={infoHandler}
+                            type="radio" name="insurance" id="insuranceTrue" value={true} required/>
+                            </div>
+                            <div className="radio-item">
+                            <label htmlFor="insuranceFalse">No</label> 
+                            <input 
+                            onChange={infoHandler}
+                            type="radio" name="insurance" id="insuranceFalse" value={false} required/>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div>
