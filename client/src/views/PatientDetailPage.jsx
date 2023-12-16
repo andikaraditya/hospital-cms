@@ -4,6 +4,7 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 function PatientDetailPage() {
     const [patient, setPatient] = useState({})
+    const [BMI, setBMI] = useState(0)
 
     const {id} = useParams()
     const navigate = useNavigate()
@@ -18,6 +19,7 @@ function PatientDetailPage() {
             })
             // console.log(data)
             setPatient(data)
+            setBMI(Math.round(data.info.weight / Math.pow((data.info.height / 100), 2) * 100) / 100)
         } catch (error) {
             console.log(error)
         }
@@ -55,6 +57,24 @@ function PatientDetailPage() {
                 >Edit Info</button>
             </div>
             <div id="info-detail">
+                <p id="title">Patient Informations</p>
+                <div className="info-table">
+                    <p>Name: {patient.name}</p>
+                    <p>Age: {patient.info.age}</p>
+                </div>
+                <div className="info-table">
+                    <p>Blood Pressure: {patient.info.bloodPressure}</p>
+                    <p>Heart Rate: {patient.info.age}</p>
+                </div>
+                <div className="info-table">
+                    <p>Height: {patient.info.height} cm</p>
+                    <p>Weight: {patient.info.weight} kg</p>
+                    <p>BMI: {BMI}</p>
+                </div>
+                <div className="info-table">
+                    <p>Insurance: {patient.info.insurance ? "Yes" : "No"} </p>
+                    <p>Risk: {patient.info.risk}</p>
+                </div>
             </div>
         </div>
     );

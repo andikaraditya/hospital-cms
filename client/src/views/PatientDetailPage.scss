@@ -52,5 +52,27 @@
 
     #info-detail {
         flex: 2;
+        color: index.$black;
+        display: flex;
+        flex-direction: column;
+
+        #title {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .info-table {
+            display: flex;
+            flex-direction: row;
+
+            p {
+                flex: 1;
+                font-size: 3rem;
+                border: index.$grey solid 2px;
+                margin: 0;
+                padding: 2rem 0;
+                padding-left: 2rem;
+            }
+        }
     }
 }
