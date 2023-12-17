@@ -113,7 +113,8 @@ function HomePage() {
             <div id="dasboard-container">
                 <div className="dashboard-item">
                     <h2>Total Patients</h2>
-                    <p>{data.length}</p>
+                    <p id="total">{data.length}</p>
+                    <p className="info">Currently admitted patients</p>
                 </div>
                 <div className="dashboard-item">
                     <h2>Facilities</h2>
@@ -126,11 +127,12 @@ function HomePage() {
                             {
                                 data: facilityData.map((el) => {
                                     return el.count
-                                })
+                                }),
                             }
                         ]
                     }}
                     />
+                    <p className="info">hover to see how many patients in each facilities</p>
                 </div>
                 <div className="dashboard-item">
                     <h2>Diagnose</h2>
@@ -151,19 +153,18 @@ function HomePage() {
                 </div>
                 <div className="dashboard-item">
                     <h2>Risk</h2>
-                    <Pie
+                    <Bar
                     data={{
                         labels: riskData.map((el) => {
                             return el.name
                         }),
                         datasets: [
                             {
-                                label: riskData.map((el) => {
-                                    return el.name
-                                }),
+                                label: ["number of patients"],
                                 data: riskData.map((el) => {
                                     return el.count
-                                })
+                                }),
+                                backgroundColor: ["#7ED957", "#FFDE59", "#FF5757"]
                             }
                         ]
                     }}
