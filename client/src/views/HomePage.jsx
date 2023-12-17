@@ -1,16 +1,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Chart as ChartJS } from "chart.js/auto";
-import { Pie } from "react-chartjs-2";
+import { Pie, Bar } from "react-chartjs-2";
 import LoadingScreen from "../components/LoadingScreen";
+import "./HomePage.scss"
 
 function HomePage() {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
     const [facilityData, setFacilityData] = useState([])
-    const [illnessData, setIllnessData] = useState({})
-    const [insuranceData, setInsuranceData] = useState({})
-    const [riskData, setRiskData] = useState({})
+    const [illnessData, setIllnessData] = useState([])
+    const [insuranceData, setInsuranceData] = useState([])
+    const [riskData, setRiskData] = useState([])
 
     async function fetchData() {
         setLoading(true)
@@ -22,10 +23,36 @@ function HomePage() {
                     "_expand": "Ward"
                 }
             })
-            facility(data)
-            illness(data)
-            insurance(data)
-            risk(data)
+
+            setFacilityData(formatData(data, "Ward"))
+            setIllnessData(formatData(data.map((el) => {
+                return {
+                    illness: {
+                        name: el.illness
+                    }
+                }
+            }), "illness"))
+            setRiskData(formatData(data.map((el) => {
+                return {
+                    risk: {
+                        name: el.info.risk
+                    }
+                }
+            }), "risk"))
+            setInsuranceData(formatData(data.map((el) => {
+                if (el.info.insurance) {
+                    return {
+                        insurance: {
+                            name: "yes"
+                        }
+                    }
+                }
+                return {
+                    insurance: {
+                        name: "no"
+                    }
+                }
+            }), "insurance"))
             setData(data)
         } catch (error) {
             console.log(error)
@@ -33,68 +60,39 @@ function HomePage() {
         setLoading(false)
     }
 
-    function facility(data) {
-        let obj = {}
+    function formatData(data, field) {
         let result = []
-
+        
         for (const item of data) {
-            if (!obj[item.Ward.name]) {
-                obj[item.Ward.name] = 0
+            let isAdded = false
+
+            if (result.length === 0) {
+                result.push({
+                    name: item[field].name,
+                    count: 1
+                })
+                continue
             }
-            obj[item.Ward.name] += 1
-        }
 
-        for (const [key, value] of Object.entries(obj)) {
-            result.push({
-                name: key,
-                count: value
-            })
-        }
-
-        setFacilityData(result)
-    }
-
-    function illness(data) {
-        let result = {}
-
-        for (const item of data) {
-            if (!result[item.illness]) {
-                result[item.illness] = 0
+            for (let i = 0; i < result.length; i++) {
+                if (result[i].name === item[field].name) {
+                    result[i].count += 1
+                    isAdded = true
+                    break
+                }
             }
-            result[item.illness] += 1
-        }
 
-        setIllnessData(result)
-    }
-
-    function insurance(data) {
-        let result = {
-            yes: 0,
-            no: 0
-        }
-
-        for (const item of data) {
-            if (item.info.insurance) {
-                result.yes += 1
+            if (isAdded) {
+                continue
             } else {
-                result.no += 1
+                result.push({
+                    name: item[field].name,
+                    count: 1
+                })
             }
         }
 
-        setInsuranceData(result)
-    }
-
-    function risk(data) {
-        let result = {}
-
-        for (const item of data) {
-            if (!result[item.info.risk]) {
-                result[item.info.risk] = 0
-            }
-            result[item.info.risk] += 1
-        }
-
-        setRiskData(result)
+        return result
     }
 
     useEffect(() => {
@@ -111,24 +109,84 @@ function HomePage() {
 
     return (
         <>
-            <h1>Home Page</h1>
-            <Pie
-            data={{
-                labels: facilityData.map((el) => {
-                    return el.name
-                }),
-                datasets: [
-                    {
-                        label: facilityData.map((el) => {
+            <h1>Dashboard</h1>
+            <div id="dasboard-container">
+                <div className="dashboard-item">
+                    <h2>Total Patients</h2>
+                    <p>{data.length}</p>
+                </div>
+                <div className="dashboard-item">
+                    <h2>Facilities</h2>
+                    <Pie
+                    data={{
+                        labels: facilityData.map((el) => {
                             return el.name
                         }),
-                        data: facilityData.map((el) => {
-                            return el.count
-                        })
-                    }
-                ]
-            }}
-            />
+                        datasets: [
+                            {
+                                data: facilityData.map((el) => {
+                                    return el.count
+                                })
+                            }
+                        ]
+                    }}
+                    />
+                </div>
+                <div className="dashboard-item">
+                    <h2>Diagnose</h2>
+                    <Pie
+                    data={{
+                        labels: illnessData.map((el) => {
+                            return el.name
+                        }),
+                        datasets: [
+                            {
+                                data: illnessData.map((el) => {
+                                    return el.count
+                                })
+                            }
+                        ]
+                    }}
+                    />
+                </div>
+                <div className="dashboard-item">
+                    <h2>Risk</h2>
+                    <Pie
+                    data={{
+                        labels: riskData.map((el) => {
+                            return el.name
+                        }),
+                        datasets: [
+                            {
+                                label: riskData.map((el) => {
+                                    return el.name
+                                }),
+                                data: riskData.map((el) => {
+                                    return el.count
+                                })
+                            }
+                        ]
+                    }}
+                    />
+                </div>
+                <div className="dashboard-item">
+                    <h2>Insurance</h2>
+                    <Pie
+                    data={{
+                        labels: insuranceData.map((el) => {
+                            return el.name
+                        }),
+                        datasets: [
+                            {
+                                data: insuranceData.map((el) => {
+                                    return el.count
+                                })
+                            }
+                        ]
+                    }}
+                    />
+                </div>
+            </div>
         </>
     );
 }
