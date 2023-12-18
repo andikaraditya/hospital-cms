@@ -115,3 +115,106 @@
         }
     }
 }
+
+@media only screen and (max-width:1200px) {
+    #detail-page {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 5rem auto;
+        gap: 0;
+    
+        #side-profile {
+    
+            img {
+                width: 30%;
+            }
+    
+            h1 {
+                font-size: 4rem;
+            }
+    
+            .profile-info {
+                display: flex;
+                gap: 2rem;
+                padding-left: 5rem;
+                margin: 0;
+    
+                img {
+                    height: 70px;
+                    width: 70px;
+                    align-self: center;
+                }
+    
+                p {
+                    font-size: 3rem;
+                    margin: 2rem 0;
+                }
+            }
+        }
+    
+        #info-detail {
+            flex: 2;
+            color: index.$black;
+            display: flex;
+            flex-direction: column;
+    
+            #title {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 0 3rem;
+                
+                p {
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                }
+    
+                button {
+                    align-self: center;
+                    margin-top: 2rem;
+                    font-size: 1.3rem;
+                    padding: 1rem 2rem;
+                    color: white;
+                    font-weight: bold;
+                    background-color: index.$secondary;
+                    border: none;
+                    border-radius: 100px;
+                    margin: 0;
+                }
+            }
+    
+            .info-table {
+                display: flex;
+                flex-direction: row;
+    
+                p {
+                    flex: 1;
+                    font-size: 1.8rem;
+                    border: index.$grey solid 2px;
+                    margin: 0;
+                    padding: 2rem 0;
+                    padding-left: 2rem;
+    
+                    .low {
+                        @include risk-pill(index.$success)
+                    }
+    
+                    .medium {
+                        @include risk-pill(index.$warning)
+                    }
+    
+                    .high {
+                        @include risk-pill(index.$danger);
+    
+                        text-transform: uppercase;
+                    }
+    
+                    #description {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
