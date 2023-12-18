@@ -21,6 +21,8 @@ h1 {
         border: index.$grey solid 3px;
         border-radius: 50px;
         padding: 3rem 0;
+        display: flex;
+        flex-direction: column;
 
         #total {
             font-size: 20rem;
@@ -36,7 +38,7 @@ h1 {
 
         canvas {
             margin: auto;
-            width: 90%;
+            width: 80%;
         }
 
         .info {

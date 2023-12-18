@@ -136,16 +136,18 @@ function HomePage() {
                 </div>
                 <div className="dashboard-item">
                     <h2>Diagnose</h2>
-                    <Pie
+                    <Bar
                     data={{
                         labels: illnessData.map((el) => {
                             return el.name
                         }),
                         datasets: [
                             {
+                                label: ["Number of patients"],
                                 data: illnessData.map((el) => {
                                     return el.count
-                                })
+                                }),
+                                backgroundColor: ["#7ED957", "#FFDE59", "#FF5757"]
                             }
                         ]
                     }}
