@@ -22,7 +22,7 @@
             "name": "Elmer",
             "WardId": 1,
             "DoctorId": 1,
-            "illness": "Lung Cancer",
+            "illness": "Depression",
             "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
             "info": {
                 "bloodPressure": 101,
@@ -39,7 +39,7 @@
             "name": "Kate",
             "WardId": 3,
             "DoctorId": 3,
-            "illness": "Lung Cancer",
+            "illness": "Tumor",
             "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
             "info": {
                 "bloodPressure": 119,
@@ -56,7 +56,7 @@
             "name": "Jonathan",
             "WardId": 2,
             "DoctorId": 2,
-            "illness": "Lung Cancer",
+            "illness": "Depression",
             "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
             "info": {
                 "bloodPressure": 118,
@@ -73,7 +73,7 @@
             "name": "Dean",
             "WardId": 2,
             "DoctorId": 2,
-            "illness": "Lung Cancer",
+            "illness": "Covid 19",
             "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
             "info": {
                 "bloodPressure": 114,
@@ -90,7 +90,7 @@
             "name": "Roger",
             "WardId": 2,
             "DoctorId": 2,
-            "illness": "Lung Cancer",
+            "illness": "Depression",
             "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
             "info": {
                 "bloodPressure": 131,
@@ -107,7 +107,7 @@
             "name": "Tom",
             "WardId": 3,
             "DoctorId": 3,
-            "illness": "Lung Cancer",
+            "illness": "Covid 19",
             "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
             "info": {
                 "bloodPressure": 129,
@@ -124,7 +124,7 @@
             "name": "Tom",
             "WardId": 3,
             "DoctorId": 3,
-            "illness": "Lung Cancer",
+            "illness": "Covid 19",
             "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
             "info": {
                 "bloodPressure": 123,
@@ -141,7 +141,7 @@
             "name": "Richard",
             "WardId": 3,
             "DoctorId": 3,
-            "illness": "Lung Cancer",
+            "illness": "Flu",
             "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
             "info": {
                 "bloodPressure": 102,
