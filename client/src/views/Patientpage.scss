@@ -103,3 +103,59 @@
         }
     }
 }
+
+@media only screen and (max-width:1200px) {
+    #patient-page {
+        display: flex;
+        flex-direction: column;
+        
+        #patient-list {
+            #title-row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 5rem;
+    
+                h1 {
+                    font-size: 3rem;
+                    color: index.$black;
+                }
+    
+                button {
+                    font-size: 1.5rem;
+                    padding: 1rem 1.5rem;
+                    color: white;
+                    font-weight: bold;
+                    background-color: index.$secondary;
+                    border: none;
+                    border-radius: 100px;
+                    align-self: center;
+                }
+            }
+        }
+    
+        #patient-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+    
+            #table-head {
+                display: flex;
+                width: 80%;
+                align-items: center;
+                gap: 2rem;
+                margin-bottom: 0.5rem;
+                align-self: center;
+    
+                div {
+                    flex: 1;
+                    text-align: center;
+                    color: index.$dark-grey;
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

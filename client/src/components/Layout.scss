@@ -32,3 +32,28 @@ nav {
         text-decoration: underline;
     }
 }
+
+@media only screen and (max-width:1200px) {
+    nav {
+        gap: 2rem;
+
+        span {
+            font-size: 180%;
+            color: white;
+            font-weight: 700;
+            width: 300px;
+            text-align: center;
+        }
+    
+        a {
+            font-size: 180%;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+    
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
