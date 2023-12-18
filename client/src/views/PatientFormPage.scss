@@ -118,7 +118,6 @@
                         border: index.$grey solid 3px;
                         border-radius: 10px;
                         padding-left: 0.8rem;
-    
                     }
 
                     #radio {
@@ -166,6 +165,41 @@
             border-radius: 100px;
             align-self: center;
             margin-top: 2rem;
+        }
+    }
+}
+
+@media only screen and (max-width:1500px) {
+    #form-page {
+
+        form {
+            width: 80%;
+
+            #form {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+
+                div {
+
+                    input {
+                        width: 100%;
+                    }
+
+                    .form-column-container {
+                        width: 100%;
+                    }
+
+                    #form-info {
+                        width: 100%;
+                    }
+
+                    textarea {
+                        width: 100%;
+                    }
+                }
+            }
+
         }
     }
 }
