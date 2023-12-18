@@ -93,6 +93,7 @@
                 margin: 0;
                 padding: 2rem 0;
                 padding-left: 2rem;
+                white-space: pre-line;
 
                 .low {
                     @include risk-pill(index.$success)

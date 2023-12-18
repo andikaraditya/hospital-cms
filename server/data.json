@@ -1,185 +1,202 @@
 {
-    "Patients": [
-        {
-            "id": 1,
-            "name": "Jessica",
-            "WardId": 1,
-            "DoctorId": 1,
-            "illness": "Lung Cancer",
-            "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-            "info": {
-                "bloodPressure": 119,
-                "heartRate": 82,
-                "weight": 54,
-                "height": 166,
-                "insurance": true,
-                "risk": "low",
-                "age": 53
-            }
-        },
-        {
-            "id": 2,
-            "name": "Elmer",
-            "WardId": 1,
-            "DoctorId": 1,
-            "illness": "Depression",
-            "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-            "info": {
-                "bloodPressure": 101,
-                "heartRate": 79,
-                "weight": 96,
-                "height": 169,
-                "insurance": true,
-                "risk": "medium",
-                "age": 23
-            }
-        },
-        {
-            "id": 3,
-            "name": "Kate",
-            "WardId": 3,
-            "DoctorId": 3,
-            "illness": "Tumor",
-            "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-            "info": {
-                "bloodPressure": 119,
-                "heartRate": 87,
-                "weight": 85,
-                "height": 168,
-                "insurance": true,
-                "risk": "high",
-                "age": 40
-            }
-        },
-        {
-            "id": 4,
-            "name": "Jonathan",
-            "WardId": 2,
-            "DoctorId": 2,
-            "illness": "Depression",
-            "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-            "info": {
-                "bloodPressure": 118,
-                "heartRate": 62,
-                "weight": 78,
-                "height": 174,
-                "insurance": true,
-                "risk": "low",
-                "age": 23
-            }
-        },
-        {
-            "id": 5,
-            "name": "Dean",
-            "WardId": 2,
-            "DoctorId": 2,
-            "illness": "Covid 19",
-            "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-            "info": {
-                "bloodPressure": 114,
-                "heartRate": 98,
-                "weight": 90,
-                "height": 161,
-                "insurance": true,
-                "risk": "medium",
-                "age": 35
-            }
-        },
-        {
-            "id": 6,
-            "name": "Roger",
-            "WardId": 2,
-            "DoctorId": 2,
-            "illness": "Depression",
-            "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-            "info": {
-                "bloodPressure": 131,
-                "heartRate": 93,
-                "weight": 91,
-                "height": 182,
-                "insurance": false,
-                "risk": "high",
-                "age": 42
-            }
-        },
-        {
-            "id": 7,
-            "name": "Tom",
-            "WardId": 3,
-            "DoctorId": 3,
-            "illness": "Covid 19",
-            "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-            "info": {
-                "bloodPressure": 129,
-                "heartRate": 68,
-                "weight": 63,
-                "height": 167,
-                "insurance": false,
-                "risk": "low",
-                "age": 44
-            }
-        },
-        {
-            "id": 8,
-            "name": "Tom",
-            "WardId": 3,
-            "DoctorId": 3,
-            "illness": "Covid 19",
-            "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-            "info": {
-                "bloodPressure": 123,
-                "heartRate": 100,
-                "weight": 90,
-                "height": 155,
-                "insurance": false,
-                "risk": "medium",
-                "age": 23
-            }
-        },
-        {
-            "id": 9,
-            "name": "Richard",
-            "WardId": 3,
-            "DoctorId": 3,
-            "illness": "Flu",
-            "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-            "info": {
-                "bloodPressure": 102,
-                "heartRate": 84,
-                "weight": 89,
-                "height": 157,
-                "insurance": false,
-                "risk": "high",
-                "age": 22
-            }
-        }
-    ],
-    "Wards": [
-        {
-            "id": 1,
-            "name": "Aster"
-        },
-        {
-            "id": 2,
-            "name": "Bellflower"
-        },
-        {
-            "id": 3,
-            "name": "Camellia"
-        }
-    ],
-    "Doctors": [
-        {
-            "id": 1,
-            "name": "Tommy Crawford"
-        },
-        {
-            "id": 2,
-            "name": "Bessie Willis"
-        },
-        {
-            "id": 3,
-            "name": "Herman Reynolds"
-        }
-    ]
+  "Patients": [
+    {
+      "id": 1,
+      "name": "Jessica",
+      "WardId": 1,
+      "DoctorId": 1,
+      "illness": "Lung Cancer",
+      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "info": {
+        "bloodPressure": 119,
+        "heartRate": 82,
+        "weight": 54,
+        "height": 166,
+        "insurance": true,
+        "risk": "low",
+        "age": 53
+      }
+    },
+    {
+      "id": 2,
+      "name": "Elmer",
+      "WardId": 1,
+      "DoctorId": 1,
+      "illness": "Depression",
+      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "info": {
+        "bloodPressure": 101,
+        "heartRate": 79,
+        "weight": 96,
+        "height": 169,
+        "insurance": true,
+        "risk": "medium",
+        "age": 23
+      }
+    },
+    {
+      "id": 3,
+      "name": "Kate",
+      "WardId": 3,
+      "DoctorId": 3,
+      "illness": "Tumor",
+      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "info": {
+        "bloodPressure": 119,
+        "heartRate": 87,
+        "weight": 85,
+        "height": 168,
+        "insurance": true,
+        "risk": "high",
+        "age": 40
+      }
+    },
+    {
+      "id": 4,
+      "name": "Jonathan",
+      "WardId": 2,
+      "DoctorId": 2,
+      "illness": "Depression",
+      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "info": {
+        "bloodPressure": 118,
+        "heartRate": 62,
+        "weight": 78,
+        "height": 174,
+        "insurance": true,
+        "risk": "low",
+        "age": 23
+      }
+    },
+    {
+      "id": 5,
+      "name": "Dean",
+      "WardId": 2,
+      "DoctorId": 2,
+      "illness": "Covid 19",
+      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "info": {
+        "bloodPressure": 114,
+        "heartRate": 98,
+        "weight": 90,
+        "height": 161,
+        "insurance": true,
+        "risk": "medium",
+        "age": 35
+      }
+    },
+    {
+      "id": 6,
+      "name": "Roger",
+      "WardId": 2,
+      "DoctorId": 2,
+      "illness": "Depression",
+      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "info": {
+        "bloodPressure": 131,
+        "heartRate": 93,
+        "weight": 91,
+        "height": 182,
+        "insurance": false,
+        "risk": "high",
+        "age": 42
+      }
+    },
+    {
+      "id": 7,
+      "name": "Tom",
+      "WardId": 3,
+      "DoctorId": 3,
+      "illness": "Covid 19",
+      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "info": {
+        "bloodPressure": 129,
+        "heartRate": 68,
+        "weight": 63,
+        "height": 167,
+        "insurance": false,
+        "risk": "low",
+        "age": 44
+      }
+    },
+    {
+      "id": 8,
+      "name": "Tom",
+      "WardId": 3,
+      "DoctorId": 3,
+      "illness": "Covid 19",
+      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "info": {
+        "bloodPressure": 123,
+        "heartRate": 100,
+        "weight": 90,
+        "height": 155,
+        "insurance": false,
+        "risk": "medium",
+        "age": 23
+      }
+    },
+    {
+      "id": 9,
+      "name": "Richard",
+      "WardId": 3,
+      "DoctorId": 3,
+      "illness": "Flu",
+      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "info": {
+        "bloodPressure": 102,
+        "heartRate": 84,
+        "weight": 89,
+        "height": 157,
+        "insurance": false,
+        "risk": "high",
+        "age": 22
+      }
+    },
+    {
+      "name": "Walter White",
+      "WardId": "2",
+      "DoctorId": "2",
+      "illness": "Lung Cancer",
+      "Description": "Walter white came with cancer\nHis medical bills are paid by a former business partner Elliot Schwarz\nHis condition has been improving ever since",
+      "info": {
+        "bloodPressure": "130",
+        "heartRate": "80",
+        "weight": "80",
+        "height": "180",
+        "age": "50",
+        "risk": "medium",
+        "insurance": false
+      },
+      "id": 10
+    }
+  ],
+  "Wards": [
+    {
+      "id": 1,
+      "name": "Aster"
+    },
+    {
+      "id": 2,
+      "name": "Bellflower"
+    },
+    {
+      "id": 3,
+      "name": "Camellia"
+    }
+  ],
+  "Doctors": [
+    {
+      "id": 1,
+      "name": "Tommy Crawford"
+    },
+    {
+      "id": 2,
+      "name": "Bessie Willis"
+    },
+    {
+      "id": 3,
+      "name": "Herman Reynolds"
+    }
+  ]
 }
