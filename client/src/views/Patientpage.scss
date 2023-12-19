@@ -23,6 +23,7 @@
                 border-radius: 20px;
                 font-size: 1.5rem;
                 margin-bottom: 0.7rem;
+                box-shadow: 2px 2px 2px index.$grey;
             }
 
             .form-column-container {
@@ -37,7 +38,7 @@
                     border: index.$grey solid 3px;
                     border-radius: 10px;
                     padding-left: 0.8rem;
-
+                    box-shadow: 2px 2px 2px index.$grey;
                 }
             }
 
@@ -50,6 +51,7 @@
                 background-color: index.$secondary;
                 border: none;
                 border-radius: 100px;
+                box-shadow: 5px 5px 5px index.$grey;
             }
         }
     }
@@ -76,6 +78,7 @@
                 background-color: index.$secondary;
                 border: none;
                 border-radius: 100px;
+                box-shadow: 5px 5px 5px index.$grey;
             }
         }
     }
@@ -85,6 +88,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
+        margin-bottom: 3rem;
 
         #table-head {
             display: flex;

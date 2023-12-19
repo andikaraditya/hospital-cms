@@ -1,7 +1,7 @@
 @use "../index.scss";
 
 h1 {
-    font-size: 4rem;
+    font-size: 7rem;
     color: index.$black;
     text-align: center;
     justify-content: space-around;
@@ -23,11 +23,14 @@ h1 {
         padding: 3rem 0;
         display: flex;
         flex-direction: column;
+        background-color: white;
+        box-shadow: 10px 10px 10px index.$grey;
 
         #total {
             font-size: 20rem;
             margin: 0;
             text-align: center;
+            font-weight: bold;
         }
 
         h2 {
