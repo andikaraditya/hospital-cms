@@ -1,9 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Chart as ChartJS } from "chart.js/auto";
-import { Pie, Bar } from "react-chartjs-2";
 import LoadingScreen from "../components/LoadingScreen";
 import "./HomePage.scss"
+import PieChart from "../components/PieChart";
+import BarChart from "../components/BarChart";
+
+const DUMMY_PATIENT_IMAGE = "https://cdn-icons-png.flaticon.com/512/1430/1430453.png"
+const DUMMY_FACILITY_IMAGE = "https://cdn-icons-png.flaticon.com/512/2185/2185005.png"
+const DUMMY_DOCTOR_IMAGE = "https://cdn-icons-png.flaticon.com/512/3774/3774299.png"
 
 function HomePage() {
     const [data, setData] = useState([])
@@ -129,91 +133,43 @@ function HomePage() {
                 <div className="heading-item">
                     <p>Addmited patients: </p>
                     <span>{data.length}</span>
-                    <img src="https://cdn-icons-png.flaticon.com/512/1430/1430453.png"/>
+                    <img src={DUMMY_PATIENT_IMAGE}/>
                 </div>
                 <div className="heading-item">
                     <p>Active facilities: </p>
                     <span>{facilityData.length}</span>
-                    <img src="https://cdn-icons-png.flaticon.com/512/2185/2185005.png"/>
+                    <img src={DUMMY_FACILITY_IMAGE}/>
                 </div>
                 <div className="heading-item">
                     <p>On duty physician: </p>
                     <span>{doctors.length}</span>
-                    <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png"/>
+                    <img src={DUMMY_DOCTOR_IMAGE}/>
                 </div>
             </div>
             <div className="dasboard-container">
                 <div className="dashboard-item">
                     <h2>Facilities</h2>
-                    <Pie
-                    data={{
-                        labels: facilityData.map((el) => {
-                            return el.name
-                        }),
-                        datasets: [
-                            {
-                                data: facilityData.map((el) => {
-                                    return el.count
-                                }),
-                            }
-                        ]
-                    }}
+                    <PieChart
+                        data={facilityData}
                     />
                     <p className="info">hover to see how many patients in each facilities</p>
                 </div>
                 <div className="dashboard-item">
                     <h2>Diagnose</h2>
-                    <Bar
-                    data={{
-                        labels: illnessData.map((el) => {
-                            return el.name
-                        }),
-                        datasets: [
-                            {
-                                label: ["Number of patients"],
-                                data: illnessData.map((el) => {
-                                    return el.count
-                                }),
-                                backgroundColor: ["#7ED957", "#FFDE59", "#FF5757"]
-                            }
-                        ]
-                    }}
+                    <BarChart
+                        data={illnessData}
                     />
                 </div>
                 <div className="dashboard-item">
                     <h2>Risk</h2>
-                    <Bar
-                    data={{
-                        labels: riskData.map((el) => {
-                            return el.name
-                        }),
-                        datasets: [
-                            {
-                                label: ["number of patients"],
-                                data: riskData.map((el) => {
-                                    return el.count
-                                }),
-                                backgroundColor: ["#7ED957", "#FFDE59", "#FF5757"]
-                            }
-                        ]
-                    }}
+                    <BarChart
+                        data={riskData}
                     />
                 </div>
                 <div className="dashboard-item">
                     <h2>Insurance</h2>
-                    <Pie
-                    data={{
-                        labels: insuranceData.map((el) => {
-                            return el.name
-                        }),
-                        datasets: [
-                            {
-                                data: insuranceData.map((el) => {
-                                    return el.count
-                                })
-                            }
-                        ]
-                    }}
+                    <PieChart
+                        data={insuranceData}
                     />
                 </div>
             </div>
