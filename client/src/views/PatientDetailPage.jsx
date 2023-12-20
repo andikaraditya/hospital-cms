@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import "./PatientDetailPage.scss"
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import LoadingScreen from "../components/LoadingScreen";
+
 function PatientDetailPage() {
     const [patient, setPatient] = useState({})
     const [BMI, setBMI] = useState(0)
@@ -17,7 +19,7 @@ function PatientDetailPage() {
                     "_expand": ["Doctor", "Ward"]
                 }
             })
-            // console.log(data)
+
             setPatient(data)
             setBMI(Math.round(data.info.weight / Math.pow((data.info.height / 100), 2) * 100) / 100)
         } catch (error) {
@@ -31,8 +33,9 @@ function PatientDetailPage() {
 
     if (patient.name === undefined) {
         return (
-            <>
-            </>
+            <LoadingScreen
+            name="Patient detail"
+            />
         )
     }
 
