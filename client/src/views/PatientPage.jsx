@@ -8,17 +8,29 @@ function PatientPage() {
     const [facilities, setFacilities] = useState([])
     const [doctors, setDoctors] = useState([])
 
-    const [name, setName] = useState("")
-    const [illness, setIllness] = useState("")
-    const [facilityId, setFacilityId] = useState("")
-    const [doctorId, setDoctorId] = useState("")
+    const [searchForm, setSearchForm] = useState({
+        name: "",
+        illness: "",
+        WardId: 0,
+        DoctorId: 0
+    })
 
     const [page, setPage] = useState(1)
 
     const navigate = useNavigate()
 
+    function searchFormHandler(e) {
+        const {name, value} = e.target
+        setSearchForm((prev) => ({
+            ...prev,
+            [name]: value,
+        }))
+        console.log(searchForm)
+    }
+
     async function fetchPatient() {
         try {
+            const {name, illness, WardId, DoctorId} = searchForm
             const params = {
                 "_expand": "Doctor",
                 "_page": page,
@@ -33,12 +45,12 @@ function PatientPage() {
                 params.illness = illness
                 setPage(1)
             }
-            if (facilityId) {
-                params.WardId = facilityId
+            if (WardId) {
+                params.WardId = WardId
                 setPage(1)
             }
-            if (doctorId) {
-                params.DoctorId = doctorId
+            if (DoctorId) {
+                params.DoctorId = DoctorId
                 setPage(1)
             }
             
@@ -97,21 +109,15 @@ function PatientPage() {
                 }}
                 >
                     <input 
-                    onChange={(e) => {
-                        setName(e.target.value)
-                    }}
+                    onChange={searchFormHandler}
                     type="text" name="name" id="name" placeholder="Search name"/>
                     <input 
-                    onChange={(e) => {
-                        setIllness(e.target.value)
-                    }}
+                    onChange={searchFormHandler}
                     type="text" name="illness" id="illness" placeholder="Search illness"/>
                     <div className="form-column-container">
                         <select 
-                        onChange={(e) => {
-                            setFacilityId(e.target.value)
-                        }}
-                        name="facilities" id="facilities">
+                        onChange={searchFormHandler}
+                        name="WardId" id="WardId">
                             <option value="">select facilities</option>
                             {facilities.map((el) => {
                                 return (
@@ -122,10 +128,8 @@ function PatientPage() {
                             })}
                         </select>
                         <select
-                        onChange={(e) => {
-                            setDoctorId(e.target.value)
-                        }}
-                        name="doctor" id="doctor">
+                        onChange={searchFormHandler}
+                        name="DoctorId" id="DoctorId">
                             <option value="">select doctor</option>
                             {doctors.map((el) => {
                                 return (
