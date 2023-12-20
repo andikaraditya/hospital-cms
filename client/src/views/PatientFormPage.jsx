@@ -75,7 +75,7 @@ function PatientFormPage() {
                 url += `/${id}`
             }
 
-            const {data} = await axios({
+            await axios({
                 method: method,
                 url: url,
                 data: {
@@ -111,7 +111,7 @@ function PatientFormPage() {
 
     async function handleDelete() {
         try {
-            const {data} = await axios({
+            await axios({
                 method: "delete",
                 url: `http://localhost:3000/Patients/${id}`
             })
@@ -135,60 +135,84 @@ function PatientFormPage() {
             <div id="head">
                 <div>
                     <button
-                    className="pointer-hover"
-                    onClick={(e) => {
-                        e.preventDefault()
-                        navigate("/patients")
-                    }}
+                        className="pointer-hover"
+                        onClick={(e) => {
+                            e.preventDefault()
+                            navigate("/patients")
+                        }}
                     >Cancel</button>
                 </div>
                 <div>
                     <h1>{id ? "Edit" : "Add"} Patient</h1>
                 </div>
                 <div>
-                    {id ? <button
-                    className="pointer-hover"
-                    onClick={handleDelete}
-                    >Delete</button> : ""}
+                    {id ? (
+                        <button
+                            className="pointer-hover"
+                            onClick={handleDelete}
+                        >Delete</button>
+                    ) : ""}
                 </div>
             </div>
             <form
-            onSubmit={handleSubmit}
+                onSubmit={handleSubmit}
             >
                 <div id="form">
                 <div>
                     <label htmlFor="">Name: </label>
                     <input 
-                    onChange={patientFormHandler}
-                    defaultValue={patient.name}
-                    type="text" name="name" id="name" placeholder="Enter patient name" required/>
+                        id="name" 
+                        defaultValue={patient.name}
+                        type="text" 
+                        name="name" 
+                        placeholder="Enter patient name" 
+                        required
+                        onChange={patientFormHandler}
+                    />
                     <label htmlFor="">Diagnose: </label>
                     <input 
-                    defaultValue={patient.illness}
-                    onChange={patientFormHandler}
-                    type="text" name="illness" id="illness" placeholder="Enter diagnose" required/>
+                        id="illness" 
+                        defaultValue={patient.illness}
+                        type="text" 
+                        name="illness" 
+                        placeholder="Enter diagnose" 
+                        required
+                        onChange={patientFormHandler}
+                    />
                     <div className="form-column-container">
                         <select 
-                        onChange={patientFormHandler}
-                        name="WardId" id="WardId" required>
+                            id="WardId" 
+                            name="WardId" 
+                            required
+                            onChange={patientFormHandler}
+                        >
                             <option value="">select facilities</option>
                             {facilities.map((el) => {
                                 return (
                                     <option 
-                                    key={el.id}
-                                    value={el.id}>{el.name}</option>
+                                        key={el.id}
+                                        value={el.id}
+                                    >
+                                        {el.name}
+                                    </option>
                                 )
                             })}
                         </select>
                         <select
-                        onChange={patientFormHandler}
-                        name="DoctorId" id="DoctorId" required>
+                            id="DoctorId"
+                            onChange={patientFormHandler}
+                            name="DoctorId" 
+                            required
+                        >
                             <option value="">select doctor</option>
                             {doctors.map((el) => {
                                 return (
                                     <option 
-                                    key={el.id}
-                                    value={el.id}>{el.name}</option>
+                                        key={el.id}
+                                        value={el.id}
+                                    >
+                                        {el.name}
+                                    </option>
                                 )
                             })}
                         </select>
@@ -197,43 +221,71 @@ function PatientFormPage() {
                     <div id="form-info">
                         <label >Age:</label>
                         <input 
-                        onChange={infoHandler}
-                        defaultValue={info.age}
-                        type="number" name="age" id="age" required placeholder="Enter blood pressure"/>
+                            id="age" 
+                            defaultValue={info.age}
+                            type="number" 
+                            name="age" 
+                            required 
+                            placeholder="Enter blood pressure"
+                            onChange={infoHandler}
+                        />
                     </div>
                     <div id="form-info">
                         <label >Blood Pressure:</label>
                         <input 
-                        onChange={infoHandler}
-                        defaultValue={info.bloodPressure}
-                        type="number" name="bloodPressure" id="bloodPressure" required placeholder="Enter blood pressure"/>
+                            id="bloodPressure" 
+                            defaultValue={info.bloodPressure}
+                            type="number" 
+                            name="bloodPressure" 
+                            required 
+                            placeholder="Enter blood pressure"
+                            onChange={infoHandler}
+                        />
                     </div>
                     <div id="form-info">
                         <label >Heart Rate:</label>
                         <input 
-                        onChange={infoHandler}
-                        defaultValue={info.heartRate}
-                        type="number" name="heartRate" id="heartRate" required placeholder="Enter heart rate"/>
+                            id="heartRate" 
+                            defaultValue={info.heartRate}
+                            type="number" 
+                            name="heartRate" 
+                            required 
+                            placeholder="Enter heart rate"
+                            onChange={infoHandler}
+                        />
                     </div>
                     <div id="form-info">
                         <label >Height:</label>
                         <input 
-                        onChange={infoHandler}
-                        defaultValue={info.height}
-                        type="number" name="height" id="height" required placeholder="Enter height in cm"/>
+                            id="height" 
+                            defaultValue={info.height}
+                            type="number" 
+                            name="height" 
+                            required 
+                            placeholder="Enter height in cm"
+                            onChange={infoHandler}
+                        />
                     </div>
                     <div id="form-info">
                         <label >Weight:</label>
                         <input 
-                        onChange={infoHandler}
-                        defaultValue={info.weight}
-                        type="number" name="weight" id="weight" required placeholder="Enter weight in kg"/>
+                            id="weight" 
+                            defaultValue={info.weight}
+                            type="number" 
+                            name="weight" 
+                            required 
+                            placeholder="Enter weight in kg"
+                            onChange={infoHandler}
+                        />
                     </div>
                     <div id="form-info">
                         <label >Risk:</label>
                         <select 
-                        onChange={infoHandler}
-                        name="risk" id="risk" required>
+                            id="risk" 
+                            name="risk" 
+                            required
+                            onChange={infoHandler}
+                        >
                             <option value="" >Select Risk</option>
                             <option value="low">low</option>
                             <option value="medium">medium</option>
@@ -246,14 +298,24 @@ function PatientFormPage() {
                             <div className="radio-item">
                             <label htmlFor="insuranceTrue">Yes</label> 
                             <input 
-                            onChange={infoHandler}
-                            type="radio" name="insurance" id="insuranceTrue" value={true} required/>
+                                id="insuranceTrue" 
+                                type="radio" 
+                                name="insurance" 
+                                value={true} 
+                                required
+                                onChange={infoHandler}
+                            />
                             </div>
                             <div className="radio-item">
                             <label htmlFor="insuranceFalse">No</label> 
                             <input 
-                            onChange={infoHandler}
-                            type="radio" name="insurance" id="insuranceFalse" value={false} required/>
+                                id="insuranceFalse" 
+                                type="radio" 
+                                name="insurance" 
+                                value={false} 
+                                required
+                                onChange={infoHandler}
+                            />
                             </div>
                         </div>
                     </div>
@@ -261,14 +323,21 @@ function PatientFormPage() {
                 <div>
                     <label>Notes: </label>
                     <textarea 
+                    id="Description" 
                     defaultValue={patient.Description}
+                    name="Description" 
+                    cols="30" 
+                    rows="10" 
+                    required
                     onChange={patientFormHandler}
-                    name="Description" id="Description" cols="30" rows="10" required></textarea>
+                    ></textarea>
                 </div>
                 </div>
                 <button
-                className="pointer-hover"
-                >Submit</button>
+                    className="pointer-hover"
+                >
+                    Submit
+                </button>
             </form>
         </div>
     );
