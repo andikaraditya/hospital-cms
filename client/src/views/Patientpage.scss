@@ -105,6 +105,31 @@
                 font-weight: bold;
             }
         }
+
+        #page-row {
+            align-self: center;
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+
+            button {
+                font-size: 1.5rem;
+                padding: 0.5rem 1.5rem;
+                color: white;
+                font-weight: bold;
+                background-color: index.$secondary;
+                border: none;
+                border-radius: 100px;
+                box-shadow: 5px 5px 5px index.$grey;
+            }
+            
+            p {
+                margin: 0;
+                font-size: 2rem;
+            }
+        }
     }
 }
 

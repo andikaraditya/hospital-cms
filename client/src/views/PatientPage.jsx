@@ -13,25 +13,33 @@ function PatientPage() {
     const [facilityId, setFacilityId] = useState("")
     const [doctorId, setDoctorId] = useState("")
 
+    const [page, setPage] = useState(1)
+
     const navigate = useNavigate()
 
     async function fetchPatient() {
         try {
             const params = {
-                "_expand": "Doctor"
+                "_expand": "Doctor",
+                "_page": page,
+                "_limit": 5
             }
 
             if (name) {
                 params.name = name
+                setPage(1)
             }
             if (illness) {
                 params.illness = illness
+                setPage(1)
             }
             if (facilityId) {
                 params.WardId = facilityId
+                setPage(1)
             }
             if (doctorId) {
                 params.DoctorId = doctorId
+                setPage(1)
             }
             
             const {data} = await axios({
@@ -74,6 +82,10 @@ function PatientPage() {
         fetchDoctor()
         fetchFacilities()
     }, [])
+
+    useEffect(() => {
+        fetchPatient()
+    },[page])
     return (
         <div id="patient-page">
             <div id="filter">
@@ -154,6 +166,12 @@ function PatientPage() {
                         <div>
                         </div>
                     </div>
+                    {patients.length === 0 ? (
+                        <div style={{
+                            margin: "2rem auto",
+                            fontSize: "3rem"
+                        }}>End of patient list</div>
+                    ) : ""}
                     {patients.map((el) => {
                         return (
                             <PatientRow 
@@ -162,6 +180,32 @@ function PatientPage() {
                             />
                         )
                     })}
+                    <div id="page-row">
+                        <div>
+                        {page === 1 ? "" : (
+                            <button
+                            className="pointer-hover"
+                            onClick={(e) => {
+                                setPage((prev) => {
+                                    return prev -1
+                                })
+                            }}
+                            >Previous</button>
+                        )}
+                        </div>
+                        <p>page: {page}</p>
+                        <div>
+                        {patients.length === 5 ? (
+                            <button
+                            className="pointer-hover"
+                            onClick={(e) => {
+                                setPage((prev) => {
+                                    return prev +1
+                                })
+                            }}
+                            >Next</button>) : ""}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
