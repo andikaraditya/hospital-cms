@@ -25,7 +25,6 @@ function PatientPage() {
             ...prev,
             [name]: value,
         }))
-        console.log(searchForm)
     }
 
     async function fetchPatient() {
@@ -103,39 +102,57 @@ function PatientPage() {
             <div id="filter">
                 <p>Filter</p>
                 <form
-                onSubmit={(e) => {
-                    e.preventDefault()
-                    fetchPatient()
-                }}
+                    onSubmit={(e) => {
+                        e.preventDefault()
+                        fetchPatient()
+                    }}
                 >
                     <input 
-                    onChange={searchFormHandler}
-                    type="text" name="name" id="name" placeholder="Search name"/>
+                        id="name" 
+                        type="text" 
+                        name="name" 
+                        placeholder="Search name"
+                        onChange={searchFormHandler}
+                    />
                     <input 
-                    onChange={searchFormHandler}
-                    type="text" name="illness" id="illness" placeholder="Search illness"/>
+                        id="illness" 
+                        type="text" 
+                        name="illness" 
+                        placeholder="Search illness"
+                        onChange={searchFormHandler}
+                    />
                     <div className="form-column-container">
                         <select 
-                        onChange={searchFormHandler}
-                        name="WardId" id="WardId">
+                            id="WardId"
+                            name="WardId" 
+                            onChange={searchFormHandler}
+                        >
                             <option value="">select facilities</option>
                             {facilities.map((el) => {
                                 return (
                                     <option 
-                                    key={el.id}
-                                    value={el.id}>{el.name}</option>
+                                        key={el.id}
+                                        value={el.id}
+                                    >
+                                        {el.name}
+                                    </option>
                                 )
                             })}
                         </select>
                         <select
+                        id="DoctorId"
+                        name="DoctorId" 
                         onChange={searchFormHandler}
-                        name="DoctorId" id="DoctorId">
+                        >
                             <option value="">select doctor</option>
                             {doctors.map((el) => {
                                 return (
                                     <option 
-                                    key={el.id}
-                                    value={el.id}>{el.name}</option>
+                                        key={el.id}
+                                        value={el.id}
+                                    >
+                                        {el.name}
+                                    </option>
                                 )
                             })}
                         </select>
@@ -147,11 +164,11 @@ function PatientPage() {
                 <div id="title-row">
                     <h1>Patients</h1>
                     <button
-                    className="pointer-hover"
-                    onClick={(e) => {
-                        e.preventDefault()
-                        navigate("/create")
-                    }}
+                        className="pointer-hover"
+                        onClick={(e) => {
+                            e.preventDefault()
+                            navigate("/create")
+                        }}
                     >Add Patient</button>
                 </div>
                 <div id="patient-container">
@@ -179,8 +196,8 @@ function PatientPage() {
                     {patients.map((el) => {
                         return (
                             <PatientRow 
-                            patient={el}
-                            key={el.id}
+                                patient={el}
+                                key={el.id}
                             />
                         )
                     })}
@@ -188,26 +205,30 @@ function PatientPage() {
                         <div>
                         {page === 1 ? "" : (
                             <button
-                            className="pointer-hover"
-                            onClick={(e) => {
-                                setPage((prev) => {
-                                    return prev -1
-                                })
-                            }}
-                            >Previous</button>
+                                className="pointer-hover"
+                                onClick={(e) => {
+                                    setPage((prev) => {
+                                        return prev -1
+                                    })
+                                }}
+                            >
+                                Previous
+                            </button>
                         )}
                         </div>
                         <p>page: {page}</p>
                         <div>
                         {patients.length === 5 ? (
                             <button
-                            className="pointer-hover"
-                            onClick={(e) => {
-                                setPage((prev) => {
-                                    return prev +1
-                                })
-                            }}
-                            >Next</button>) : ""}
+                                className="pointer-hover"
+                                onClick={(e) => {
+                                    setPage((prev) => {
+                                        return prev +1
+                                    })
+                                }}
+                            >
+                                Next
+                            </button>) : ""}
                         </div>
                     </div>
                 </div>
