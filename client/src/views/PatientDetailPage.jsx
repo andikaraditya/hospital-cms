@@ -79,6 +79,9 @@ function PatientDetailPage() {
                     <p>Risk: <span className={patient.info.risk}>{patient.info.risk}</span> </p> 
                 </div>
                 <div className="info-table">
+                    <p>Diagnose: {patient.illness}</p>
+                </div>
+                <div className="info-table">
                     <p>Notes: <br /> <span id="description">{patient.Description}</span> </p>
                 </div>
             </div>
