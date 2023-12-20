@@ -12,6 +12,7 @@ function HomePage() {
     const [illnessData, setIllnessData] = useState([])
     const [insuranceData, setInsuranceData] = useState([])
     const [riskData, setRiskData] = useState([])
+    const [doctors, setDoctors] = useState([])
 
     async function fetchData() {
         setLoading(true)
@@ -60,6 +61,19 @@ function HomePage() {
         setLoading(false)
     }
 
+    async function fetchDoctors() {
+        try {
+            const {data} = await axios({
+                method: "get",
+                url: "http://localhost:3000/Doctors"
+            })
+
+            setDoctors(data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     function formatData(data, field) {
         let result = []
         
@@ -97,6 +111,7 @@ function HomePage() {
 
     useEffect(() => {
         fetchData()
+        fetchDoctors()
     }, [])
 
     if (loading) {
@@ -110,12 +125,24 @@ function HomePage() {
     return (
         <>
             <h1>Dashboard</h1>
-            <div id="dasboard-container">
-                <div className="dashboard-item">
-                    <h2>Total Patients</h2>
-                    <p id="total">{data.length}</p>
-                    <p className="info">Currently admitted patients</p>
+            <div className="dasboard-container">
+                <div className="heading-item">
+                    <p>Addmited patients: </p>
+                    <span>{data.length}</span>
+                    <img src="https://cdn-icons-png.flaticon.com/512/1430/1430453.png"/>
                 </div>
+                <div className="heading-item">
+                    <p>Active facilities: </p>
+                    <span>{facilityData.length}</span>
+                    <img src="https://cdn-icons-png.flaticon.com/512/2185/2185005.png"/>
+                </div>
+                <div className="heading-item">
+                    <p>On duty physician: </p>
+                    <span>{doctors.length}</span>
+                    <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png"/>
+                </div>
+            </div>
+            <div className="dasboard-container">
                 <div className="dashboard-item">
                     <h2>Facilities</h2>
                     <Pie

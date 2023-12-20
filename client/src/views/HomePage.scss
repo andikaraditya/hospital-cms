@@ -5,14 +5,44 @@ h1 {
     color: index.$black;
     text-align: center;
     justify-content: space-around;
+    margin: 2rem 0;
 }
 
-#dasboard-container {
+.dasboard-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: auto;
+    width: 95%;
+    margin: 3rem auto !important;
     color: index.$black;
+    margin: 2rem 0;
+    gap: 2rem;
+
+    .heading-item {
+        display: flex;
+        align-items: center;
+        border: index.$grey solid 3px;
+        border-radius: 20px;
+        padding: 1rem 3rem;
+        justify-content: space-around;
+        flex: 1;
+        
+        p {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        span {
+            font-size: 3rem;
+            margin-left: 2rem;
+            margin-right: 0.5rem;
+            font-weight: 900;
+        }
+
+        img {
+            height: 5rem;
+        }
+    }
 
     .dashboard-item {
         width: 600px;
