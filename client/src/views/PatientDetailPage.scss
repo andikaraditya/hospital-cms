@@ -34,9 +34,9 @@
 
         .profile-info {
             display: flex;
-            gap: 2rem;
-            padding-left: 5rem;
+            padding-left: 3rem;
             margin: 0;
+            gap: 1rem;
 
             img {
                 height: 70px;
@@ -46,7 +46,7 @@
 
             p {
                 font-size: 3rem;
-                margin: 2rem 0;
+                margin: 1rem 0;
             }
         }
     }
