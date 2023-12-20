@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./PatientFormPage.scss"
 import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import axios from "axios";
 
 function PatientFormPage() {
@@ -92,7 +93,8 @@ function PatientFormPage() {
                 }
             })
 
-            navigate("/patients")
+            toast.success(id ? "Patient has been updated" : "Patient has been added")
+            navigate(id ? `/patients/${id}` : "/patients")
         } catch (error) {
             console.log(error)
         }
@@ -119,6 +121,7 @@ function PatientFormPage() {
                 url: `http://localhost:3000/Patients/${id}`
             })
 
+            toast.success("Patient has been deleted")
             navigate("/patients")
         } catch (error) {
             console.log(error)
