@@ -25,7 +25,7 @@ node js
 ### Dashboard
 ![](./img/1.png)
 
->A full feature dashboard showing charts and data
+>A full feature dashboard showing numbers of patients, facility, physician, dan charts to show available data
 
 ### List
 ![](./img/2.png)
