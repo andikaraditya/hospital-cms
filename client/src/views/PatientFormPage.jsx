@@ -9,11 +9,6 @@ function PatientFormPage() {
     const [doctors, setDoctors] = useState([])
 
     const {id} = useParams()
-    // const [name, setName] = useState("")
-    // const [illness, setIllness] = useState("")
-    // const [facilityId, setFacilityId] = useState("")
-    // const [doctorId, setDoctorId] = useState("")
-    // const [description, setDescription] = useState("")
 
     const [patient, setPatient] = useState({
         name: "",
